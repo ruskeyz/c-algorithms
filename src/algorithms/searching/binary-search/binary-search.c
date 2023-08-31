@@ -19,12 +19,17 @@ int binary_search(int s[], int n, int length) {
     }
     return 0;
 }
+void display(int s[], int n) {
+  for (int i = 0; i < n; i++) {
+    printf("%d ", s[i]);
+  }
+  printf("\n");
+}
 
  int main() {
   int s[] = {1, 3, 5, 7, 9};
   int length = sizeof(s) / sizeof(s[0]);
   int n = 3;
-  printf("Elements after sorting:\n");
   binary_search(s, n, length);
 }
 

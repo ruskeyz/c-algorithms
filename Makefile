@@ -6,30 +6,28 @@ CFLAGS = -Wall -Werror
 
 # Directories
 SRCDIR = src
-OBJDIR = obj
 BINDIR = bin
 
-# Source files (excluding main.c)
-SRCS = $(filter-out $(SRCDIR)/main.c,$(wildcard $(SRCDIR)/algorithms/**/*.c)) $(SRCDIR)/other_source_files.c
+.PHONY: binary-search insertion-sort clean
 
-# Object files
-OBJS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRCS))
+binary-search: $(BINDIR)/binary-search
 
-# Executable name
-TARGET = $(BINDIR)/my_program
-
-.PHONY: all clean
-
-all: $(TARGET)
-
-$(TARGET): $(OBJS) $(SRCDIR)/main.c
+$(BINDIR)/binary-search: $(SRCDIR)/algorithms/searching/binary-search/binary-search.c
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $<
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
+run-binary-search: binary-search
+	$(BINDIR)/binary-search
+
+insertion-sort: $(BINDIR)/insertion-sort
+
+$(BINDIR)/insertion-sort: $(SRCDIR)/algorithms/sorting/insertion-sort/insertion-sort.c
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -o $@ $<
+
+run-insertion-sort: insertion-sort
+	$(BINDIR)/insertion-sort
 
 clean:
-	@rm -rf $(OBJDIR) $(BINDIR)
+	@rm -rf $(BINDIR)/*
 
