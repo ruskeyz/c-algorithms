@@ -1,0 +1,18 @@
+DEBUG tests/blank_tests.c:30:main: ----- RUNNING: ./tests/blank_tests
+DEBUG tests/blank_tests.c:22:all_tests: 
+----- test_dlopen
+DEBUG tests/blank_tests.c:23:all_tests: 
+----- test_functions
+DEBUG tests/blank_tests.c:24:all_tests: 
+----- test_failures
+DEBUG tests/blank_tests.c:25:all_tests: 
+----- test_dlclose
+DEBUG tests/blank_tests.c:30:main: ----- RUNNING: ./tests/blank_tests
+DEBUG tests/blank_tests.c:22:all_tests: 
+----- test_dlopen
+DEBUG tests/blank_tests.c:23:all_tests: 
+----- test_functions
+DEBUG tests/blank_tests.c:24:all_tests: 
+----- test_failures
+DEBUG tests/blank_tests.c:25:all_tests: 
+----- test_dlclose
