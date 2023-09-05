@@ -8,8 +8,10 @@ Create c files in src, header files in src, then follow the blank_tests.c for un
 - dev - extra flags
 - clean - remove junk
 
-• Header (.h) files for each data structure.
-• Implementation (.c) files for the algorithms.
-• Unit tests that test all of them to make sure they keep working.
-• Documentation  auto-generated from the header files.
+## Structure 
+
+-  Header (.h) files for each data structure.
+- Implementation (.c) files for the algorithms.
+- Unit tests that test all of them to make sure they keep working.
+- Documentation  auto-generated from the header files.
 
