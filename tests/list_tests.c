@@ -2,7 +2,7 @@
 #include "../src/data_structures/list.h"
 #include <assert.h>
 
-static List *list = NULL;
+static list_t *list = NULL;
 char *test1 = "test1 data";
 char *test2 = "test2 data";
 char *test3 = "test3 data";

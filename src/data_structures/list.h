@@ -1,31 +1,31 @@
-#ifndef _LIST_H_
-#define _LIST_H_
+#ifndef _list_h_
+#define _list_h_
 
 #include <stdlib.h>
 
-struct ListNode;
-typedef struct ListNode {
-    struct ListNode *next;
-    struct ListNode *prev;
+struct list_node_t;
+typedef struct list_node_t {
+    struct list_node_t *next;
+    struct list_node_t *prev;
     void *value;
-} ListNode;
+} list_node_t;
 
-typedef struct List {
+typedef struct list_t {
     int count;
-    ListNode *first;
-    ListNode *last;
-} List;
+    list_node_t *first;
+    list_node_t *last;
+} list_t;
 
-List *List_create();
+list_t *List_create();
 /** 
  * Destroy List
  */
-void List_destroy(List *list);
+void List_destroy(list_t *list);
 /**
  * Clears the values in the list, not the nodes
  */
-void List_clear(List *list);
-void List_clear_destroy(List *list);
+void List_clear(list_t *list);
+void List_clear_destroy(list_t *list);
 
 #define List_count(A) ((A)->count)
 #define List_first(A) ((A)->first != NULL ? (A)->first->value: NULL)
@@ -33,26 +33,22 @@ void List_clear_destroy(List *list);
 /**
  * Push node to the end of the list
  */
-void List_push(List *list, void *value);
+void List_push(list_t *list, void *value);
 /**
  * Take the last element off and return List
  */
-void *List_pop(List *list);
+void *List_pop(list_t *list);
 /**
  * Add node to the front of the list 
  */
-void List_unshift(List *list, void *value);
+void List_unshift(list_t *list, void *value);
 /**
  * Remove the first node element and return List
  */
-void *List_shift(List *list);
+void *List_shift(list_t *list);
 /**
  * Remove elements from the list 
  */
-void *List_remove(List *list, ListNode *node);
-
-#define LIST_FOREACH(L, S, M, V) ListNode *_node = NULL;\
-                                                   ListNode *V = NULL;\
-for(V = _node = L->S; _node !=NULL; V = _node = _node->M)
+void *List_remove(list_t *list, list_node_t *node);
 
 #endif
